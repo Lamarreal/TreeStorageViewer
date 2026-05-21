@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="StorageApp.Classes.Spinner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            
+             Width="50" Height="25">
+    
+    <UserControl.Resources>
+        
+        <Storyboard x:Key="Bounce1" RepeatBehavior="Forever" BeginTime="0:0:0.0">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.0" Value="15"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0" KeySpline="0.33,0.66,0.66,1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="15" KeySpline="0.33,0,0.66,0.33"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="Bounce2" RepeatBehavior="Forever" BeginTime="0:0:0.1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.0" Value="15"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0" KeySpline="0.33,0.66,0.66,1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="15" KeySpline="0.33,0,0.66,0.33"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="Bounce3" RepeatBehavior="Forever" BeginTime="0:0:0.2">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Canvas.Top)">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.0" Value="15"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0" KeySpline="0.33,0.66,0.66,1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="15" KeySpline="0.33,0,0.66,0.33"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource Bounce1}" Storyboard.TargetName="Dot1"/>
+            <BeginStoryboard Storyboard="{StaticResource Bounce2}" Storyboard.TargetName="Dot2"/>
+            <BeginStoryboard Storyboard="{StaticResource Bounce3}" Storyboard.TargetName="Dot3"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <Canvas Width="50" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Ellipse x:Name="Dot1" Width="10" Height="10" Fill="{StaticResource SelectionColor}" Canvas.Left="0" Canvas.Top="15"/>
+        <Ellipse x:Name="Dot2" Width="10" Height="10" Fill="{StaticResource SelectionColor}" Canvas.Left="20" Canvas.Top="15"/>
+        <Ellipse x:Name="Dot3" Width="10" Height="10" Fill="{StaticResource SelectionColor}" Canvas.Left="40" Canvas.Top="15"/>
+    </Canvas>
+
+   
+</UserControl>
