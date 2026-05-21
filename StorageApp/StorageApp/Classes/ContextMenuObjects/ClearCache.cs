@@ -7,7 +7,7 @@ namespace StorageApp.Classes.ContextMenuObjects;
 [ContextTab("Edit")]
 public class ClearCache : IContextButtonObject
 {
-    public static string Header { get; set; } =  "Clear cache";
+    public static string Header { get; set; } =  "DoesntWork right now";
     public static string IconPath { get; set; } = "Images/TrashCan.png";
     
     public ClearCache(MenuItem CorespondingItem)

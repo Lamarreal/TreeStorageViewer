@@ -24,7 +24,7 @@ public partial class HomeScreen : UserControl, INotifyPropertyChanged
 
     private static readonly HashSet<string> SkippedSystemFiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase) 
     { 
-        "pagefile.sys", "hiberfil.sys", "swapfile.sys", "dumpstack.log" 
+        "pagefile.sys", "hiberfil.sys", "swapfile.sys", "dumpstack.log"
     };
     
     public event PropertyChangedEventHandler PropertyChanged;
